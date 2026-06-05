@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   BEST COOK — Design System
+   Warm Organic Marketplace
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* ── Base Colors ── */
+  --bg-primary: #FAF7F2;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFFCF8;
+  --bg-inset: #F3EEE7;
+  --bg-dark: #1A1814;
+  --bg-dark-surface: #262420;
+
+  /* ── Text ── */
+  --text-primary: #1A1814;
+  --text-secondary: #6B6560;
+  --text-muted: #9C9590;
+  --text-on-dark: #FAF7F2;
+  --text-on-accent: #FFFFFF;
+
+  /* ── Accent ── */
+  --accent: #E8622B;
+  --accent-hover: #D14E1A;
+  --accent-light: #FFF0E8;
+  --accent-secondary: #C5513E;
+
+  /* ── Semantic ── */
+  --success: #3D8B37;
+  --success-light: #E8F5E7;
+  --warning: #E09F3E;
+  --warning-light: #FFF5E0;
+  --error: #C13515;
+  --error-light: #FDECE8;
+  --info: #2B7AE8;
+  --info-light: #E8F0FF;
+
+  /* ── Borders ── */
+  --border: #EDE8E1;
+  --border-strong: #D9D2C8;
+  --border-accent: var(--accent);
+
+  /* ── Shadows (Airbnb-inspired 3-layer) ── */
+  --shadow-sm: 0 1px 2px rgba(26, 24, 20, 0.04);
+  --shadow-md: 
+    0 0 0 1px rgba(26, 24, 20, 0.02),
+    0 2px 6px rgba(26, 24, 20, 0.04),
+    0 4px 12px rgba(26, 24, 20, 0.08);
+  --shadow-lg: 
+    0 0 0 1px rgba(26, 24, 20, 0.02),
+    0 4px 12px rgba(26, 24, 20, 0.06),
+    0 12px 36px rgba(26, 24, 20, 0.12);
+  --shadow-xl:
+    0 0 0 1px rgba(26, 24, 20, 0.02),
+    0 8px 24px rgba(26, 24, 20, 0.08),
+    0 24px 64px rgba(26, 24, 20, 0.16);
+
+  /* ── Radii ── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+
+  /* ── Typography ── */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ── Spacing ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ── Transitions ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 400ms;
+
+  /* ── Z-index scale ── */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  /* ── Container ── */
+  --container-max: 1280px;
+  --container-narrow: 960px;
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+h4 { font-size: 1.25rem; }
+
+p {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+/* ═══════════════════════════════════════════
+   CONTAINER
+   ═══════════════════════════════════════════ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════
+   REDUCED MOTION
+   ═══════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   SELECTION
+   ═══════════════════════════════════════════ */
+
+::selection {
+  background: var(--accent-light);
+  color: var(--accent);
+}

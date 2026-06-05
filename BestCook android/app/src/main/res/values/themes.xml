@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BestCook" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#E8622B</item>
+        <item name="android:statusBarColor">#FFFDF9</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

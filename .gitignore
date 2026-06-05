@@ -1,0 +1,17 @@
+.gradle/
+build/
+**/build/
+
+node_modules/
+
+*.apk
+*.aab
+*.zip
+
+.idea/
+.vscode/
+.next/
+build/
+
+local.properties
+
